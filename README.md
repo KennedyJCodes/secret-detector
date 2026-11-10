@@ -19,4 +19,4 @@ Algunas ideas para el desarrollo futuro:
 
 ## Contribuciones
 
-Las sugerencias y contribuciones serán bienvenidas cuando se definan las pautas de colaboración del proyecto.
+Las sugerencias y contribuciones serán bienvenidas.
