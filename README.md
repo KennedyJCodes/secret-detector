@@ -8,6 +8,21 @@ El proyecto acaba de comenzar, por lo que sus funciones todavía están en desar
 
 En desarrollo. La estructura y las funciones pueden cambiar a medida que el proyecto avance.
 
+## Ejecutar el escáner de líneas
+
+El programa lee desde la entrada estándar y muestra cada línea con su número. Se recomienda ejecutarlo desde WSL:
+
+```bash
+go run ./cmd/secret-detector < testdata/sample.txt
+```
+
+El tamaño máximo predeterminado por línea es 1 MiB. Consulta `.env.example` para ver las variables disponibles. Go no carga archivos `.env` por sí mismo; en WSL puedes exportar la variable antes de ejecutar:
+
+```bash
+export SECRET_DETECTOR_MAX_LINE_BYTES=2097152
+go run ./cmd/secret-detector < testdata/sample.txt
+```
+
 ## Próximos pasos
 
 Algunas ideas para el desarrollo futuro:
