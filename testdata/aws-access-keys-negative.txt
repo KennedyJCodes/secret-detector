@@ -1,0 +1,4 @@
+# Estos valores no deben activar la regla
+api_key=THIS_IS_NOT_A_REAL_SECRET
+aws_access_key_id=AKIA-too-short
+text_with_prefix=AKIAXXXXXXXXXXXXXXXXX

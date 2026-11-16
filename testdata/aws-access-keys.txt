@@ -1,0 +1,4 @@
+# Ejemplo ficticio de formato (no es una credencial real)
+aws_access_key_id=AKIAIOSFODNN7EXAMPLE
+temporary_access_key=ASIAIOSFODNN7EXAMPLE
+Random_Object
