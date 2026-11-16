@@ -5,6 +5,7 @@ import (
 	"bufio"
 	"fmt"
 
+	"github.com/KennedyJCodes/secret-detector/internal/ports"
 	"github.com/KennedyJCodes/secret-detector/internal/scanner"
 )
 
@@ -25,7 +26,7 @@ func New(config Config) (*Reader, error) {
 	return &Reader{maxLineBytes: config.MaxLineBytes}, nil
 }
 
-func (r *Reader) ReadLines(source scanner.Source, visit func(scanner.Line) error) error {
+func (r *Reader) ReadLines(source ports.Source, visit func(scanner.Line) error) error {
 	if source == nil {
 		return fmt.Errorf("source cannot be nil")
 	}

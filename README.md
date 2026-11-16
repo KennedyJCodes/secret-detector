@@ -10,11 +10,13 @@ En desarrollo. La estructura y las funciones pueden cambiar a medida que el proy
 
 ## Ejecutar el escáner de líneas
 
-El programa lee desde la entrada estándar y muestra cada línea con su número. Se recomienda ejecutarlo desde WSL:
+El programa lee desde la entrada estándar y muestra únicamente las líneas que contienen IDs de claves de acceso de AWS, con su número de línea. Se recomienda ejecutarlo desde WSL:
 
 ```bash
 go run ./cmd/secret-detector < testdata/sample.txt
 ```
+
+Los ejemplos positivos y negativos están en `testdata/aws-access-keys.txt` y `testdata/aws-access-keys-negative.txt`. Las interfaces de entrada y de reglas están en `internal/ports`; cada regla implementa `ports.Rule`. La detección AWS identifica IDs de acceso (por ejemplo, prefijos `AKIA` y `ASIA`); no valida si la clave es activa ni detecta la clave secreta de AWS. La carga de reglas definidas por usuarios desde YAML queda para una etapa futura.
 
 El tamaño máximo predeterminado por línea es 1 MiB. Consulta `.env.example` para ver las variables disponibles. Go no carga archivos `.env` por sí mismo; en WSL puedes exportar la variable antes de ejecutar:
 
