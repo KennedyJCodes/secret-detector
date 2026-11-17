@@ -6,3 +6,9 @@ type Rule interface {
 	Name() string
 	Match(text string) bool
 }
+
+// RuleSet applies the configured rules to text and returns the names of rules
+// that matched. Implementations should return matches in a stable order.
+type RuleSet interface {
+	Matches(text string) []string
+}

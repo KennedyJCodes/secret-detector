@@ -7,6 +7,7 @@ import (
 	"github.com/KennedyJCodes/secret-detector/internal/adapter/bufioreader"
 	"github.com/KennedyJCodes/secret-detector/internal/app"
 	"github.com/KennedyJCodes/secret-detector/internal/config"
+	"github.com/KennedyJCodes/secret-detector/internal/rules"
 	"github.com/KennedyJCodes/secret-detector/internal/services"
 )
 
@@ -21,7 +22,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if err := app.Run(lineReader, os.Stdin, os.Stdout, services.AWSAccessKeyRule{}); err != nil {
+	ruleSet := rules.NewRegistry()
+	if err := ruleSet.Add(services.AWSAccessKeyRule()); err != nil {
+		log.Fatal(err)
+	}
+
+	if err := app.Run(lineReader, os.Stdin, os.Stdout, ruleSet); err != nil {
 		log.Fatal(err)
 	}
 }
