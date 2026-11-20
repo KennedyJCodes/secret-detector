@@ -2,6 +2,7 @@
 api_key=THIS_IS_NOT_A_REAL_SECRET
 aws_access_key_id=AKIA-too-short
 text_with_prefix=AKIAXXXXXXXXXXXXXXXXX
+orphan_id=AKIA7KQ4M2P9X6R3D8V1
 
 # Valores de ejemplo documentados o con marcadores de placeholder.
 aws_access_key_id=AKIAIOSFODNN7EXAMPLE
@@ -21,3 +22,9 @@ lowercase_key=akia7kq4m2p9x6r3
 unsupported_prefix=ZZZZ7KQ4M2P9X6R3
 too_short=AKIA7KQ4M2P9X6R
 too_long=AKIA7KQ4M2P9X6R3Z
+
+# Las claves secretas requieren etiqueta y formato de 40 caracteres.
+unlabeled_value=aB3dE5gH7jK9mN2pQ4rS6tU8vW1xY3zA5cD7eF9G
+secret_too_short=aB3dE5gH7jK9mN2pQ4rS6tU8vW1xY3zA5cD7eF9
+AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+repeated_secret=secretAccessKey=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

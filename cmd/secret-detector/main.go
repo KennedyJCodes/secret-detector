@@ -8,7 +8,7 @@ import (
 	"github.com/KennedyJCodes/secret-detector/internal/app"
 	"github.com/KennedyJCodes/secret-detector/internal/config"
 	"github.com/KennedyJCodes/secret-detector/internal/rules"
-	"github.com/KennedyJCodes/secret-detector/internal/services"
+	"github.com/KennedyJCodes/secret-detector/internal/services/aws"
 )
 
 func main() {
@@ -23,7 +23,10 @@ func main() {
 	}
 
 	ruleSet := rules.NewRegistry()
-	if err := ruleSet.Add(services.AWSAccessKeyRule()); err != nil {
+	if err := ruleSet.Add(aws.AWSAccessKeyRule()); err != nil {
+		log.Fatal(err)
+	}
+	if err := ruleSet.Add(aws.AWSSecretAccessKeyRule()); err != nil {
 		log.Fatal(err)
 	}
 
