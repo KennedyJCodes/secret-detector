@@ -16,7 +16,7 @@ El programa lee desde la entrada estándar y muestra únicamente las líneas que
 go run ./cmd/secret-detector < testdata/sample.txt
 ```
 
-Los ejemplos positivos y negativos están en `testdata/aws-access-keys.txt` y `testdata/aws-access-keys-negative.txt`. Las interfaces de entrada y de reglas están en `internal/ports`; cada regla implementa `ports.Rule`. La detección AWS identifica IDs de acceso (por ejemplo, prefijos `AKIA` y `ASIA`); no valida si la clave es activa ni detecta la clave secreta de AWS. La carga de reglas definidas por usuarios desde YAML queda para una etapa futura.
+Los ejemplos positivos y negativos están en `testdata/aws-access-keys.txt` y `testdata/aws-access-keys-negative.txt`. Las reglas basadas en patrones se definen con `rules.Rule` (`ID`, `Description`, `Pattern` y `MinEntropy`, opcional) y se agregan individualmente al `rules.Registry` mediante `Add`. Para sumar una detección por expresión regular, crea su definición en `internal/services` y registra el resultado en `cmd/secret-detector/main.go`; no hace falta ampliar un constructor con más argumentos. La detección AWS identifica IDs de acceso (por ejemplo, prefijos `AKIA` y `ASIA`); no valida si la clave es activa ni detecta la clave secreta de AWS. La carga de reglas definidas por usuarios desde YAML queda para una etapa futura.
 
 El tamaño máximo predeterminado por línea es 1 MiB. Consulta `.env.example` para ver las variables disponibles. Go no carga archivos `.env` por sí mismo; en WSL puedes exportar la variable antes de ejecutar:
 

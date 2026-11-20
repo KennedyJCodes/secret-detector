@@ -9,26 +9,19 @@ import (
 	"github.com/KennedyJCodes/secret-detector/internal/scanner"
 )
 
-// Run scans the source and writes each line with its one-based line number.
-func Run(lineReader ports.LineReader, source ports.Source, output io.Writer, rules ...ports.Rule) error {
+// Run scans the source and writes only matching lines with their one-based line number.
+func Run(lineReader ports.LineReader, source ports.Source, output io.Writer, ruleSet ports.RuleSet) error {
 	if output == nil {
 		return fmt.Errorf("output cannot be nil")
 	}
 	if lineReader == nil {
 		return fmt.Errorf("line reader cannot be nil")
 	}
-	for _, rule := range rules {
-		if rule == nil {
-			return fmt.Errorf("rule cannot be nil")
-		}
+	if ruleSet == nil {
+		return fmt.Errorf("rule set cannot be nil")
 	}
 	return lineReader.ReadLines(source, func(line scanner.Line) error {
-		var matches []string
-		for _, rule := range rules {
-			if rule.Match(line.Text) {
-				matches = append(matches, rule.Name())
-			}
-		}
+		matches := ruleSet.Matches(line.Text)
 		if len(matches) == 0 {
 			return nil
 		}
