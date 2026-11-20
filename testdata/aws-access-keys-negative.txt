@@ -1,4 +1,23 @@
-# Estos valores no deben activar la regla
+# Estos valores no deben activar la regla AWS.
 api_key=THIS_IS_NOT_A_REAL_SECRET
 aws_access_key_id=AKIA-too-short
 text_with_prefix=AKIAXXXXXXXXXXXXXXXXX
+
+# Valores de ejemplo documentados o con marcadores de placeholder.
+aws_access_key_id=AKIAIOSFODNN7EXAMPLE
+temporary_access_key=ASIAIOSFODNN7EXAMPLE
+sample_key=AKIASAMPLE12345678
+placeholder_key=AKIAPLACEHOLDER12345
+dummy_key=AKIADUMMY1234567890
+test_key=AKIATEST123456789012
+
+# Secuencias uniformes que parecen placeholders.
+repeated_letters=AKIAXXXXXXXXXXXXXXXXX
+repeated_digits=AKIA0000000000000000
+repeated_ones=ASIA1111111111111111
+
+# Formato o prefijo incorrecto.
+lowercase_key=akia7kq4m2p9x6r3
+unsupported_prefix=ZZZZ7KQ4M2P9X6R3
+too_short=AKIA7KQ4M2P9X6R
+too_long=AKIA7KQ4M2P9X6R3Z

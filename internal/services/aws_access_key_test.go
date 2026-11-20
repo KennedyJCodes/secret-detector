@@ -34,7 +34,6 @@ func TestAWSAccessKeyRuleRejectsInvalidValues(t *testing.T) {
 	}
 }
 
-
 func TestAWSAccessKeyRuleMetadata(t *testing.T) {
 	rule := AWSAccessKeyRule()
 	if rule.ID != "aws-access-key" {

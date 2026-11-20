@@ -1,4 +1,9 @@
-# Ejemplo ficticio de formato (no es una credencial real)
-aws_access_key_id=AKIAIOSFODNN7EXAMPLE
-temporary_access_key=ASIAIOSFODNN7EXAMPLE
-Random_Object
+# IDs ficticios con formato válido; no son credenciales reales.
+aws_access_key_id=AKIA7KQ4M2P9X6R3D8V1
+temporary_access_key=ASIA9D3L5W8N2C7F4H6J
+iam_user_key=AIDA4H8J2Q6V9B3M7P5R
+role_key=AROA6T2K9P4X7D1N8C5W
+instance_profile_key=AIPA3M7R5C9L2W8H4J6Q
+managed_policy_key=ANPA8V2D6K4Q9X5J3M7N
+service_role_key=ANVA2P6N8R3W7C4L9T5K
+certificate_key=ASCA5J9M3T7K2Q6V8D4R
